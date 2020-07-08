@@ -1,6 +1,8 @@
 const rulesBtn = document.getElementById('rules-btn');
 const closeBtn = document.getElementById('close-btn');
 const rules = document.getElementById('rules');
+const canvas = document.getElementById('canvas');
+const ctx = document.getContext('2d');
 
 // Rules and close event handlers
 rulesBtn.addEventListener('click', () => {
