@@ -32,3 +32,15 @@ canvas {
   color: #fff;
   border-radius: 5px;
 }
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:hover {
+  background: #222;
+}
+
+.btn:active {
+  transform: scale(.98);
+}
