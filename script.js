@@ -6,6 +6,9 @@ const ctx = canvas.getContext('2d');
 
 let score = 0;
 
+const brickRowCount = 9;
+const brickColumnCount = 5;
+
 // Create ball props
 const ball = {
   x: canvas.width / 2,
