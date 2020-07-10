@@ -95,7 +95,12 @@ function draw() {
   drawBricks();
 }
 
-draw();
+function update() {
+  // Draw everything
+  draw();
+
+  requestAnimationFrame(update);
+}
 
 // Rules and close event handlers
 rulesBtn.addEventListener('click', () => {
