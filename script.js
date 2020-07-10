@@ -120,6 +120,10 @@ function update() {
 
 update();
 
+// Key event handlers
+document.addEventListener('keydown', keyDown);
+document.addEventListener('keyUp', keyUp);
+
 // Rules and close event handlers
 rulesBtn.addEventListener('click', () => {
   rules.classList.add('show');
