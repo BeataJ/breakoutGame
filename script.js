@@ -120,9 +120,19 @@ function update() {
 
 update();
 
+// keyDown event func
+function keyDown(e) {
+  console.log(1);
+}
+
+// keyUp event func
+function keyUp(e) {
+  console.log(2);
+}
+
 // Key event handlers
 document.addEventListener('keydown', keyDown);
-document.addEventListener('keyUp', keyUp);
+document.addEventListener('keyup', keyUp);
 
 // Rules and close event handlers
 rulesBtn.addEventListener('click', () => {
