@@ -102,6 +102,9 @@ function movePaddle() {
 
 // Draw everything
 function draw() {
+  // clear canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   drawBall();
   drawPaddle();
   drawScore();
@@ -122,7 +125,11 @@ update();
 
 // keyDown event func
 function keyDown(e) {
-  console.log(1);
+  if (e.key === 'Right' || e.key === 'ArrowRight') {
+    paddle.dx = paddle.speed;
+  } else if (e.key === 'Left' || e.key === 'ArrowLeft') {
+    paddle.dx = -paddle.speed;
+  }
 }
 
 // keyUp event func
