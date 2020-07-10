@@ -92,7 +92,7 @@ function movePaddle() {
 
   // Wall detection
   if (paddle.x + paddle.w > canvas.width) {
-    paddle.x = canvas.width - paddle.x;
+    paddle.x = canvas.width - paddle.w;
   }
 
   if (paddle.x < 0) {
@@ -134,7 +134,14 @@ function keyDown(e) {
 
 // keyUp event func
 function keyUp(e) {
-  console.log(2);
+  if (
+    e.key === 'Right' ||
+    e.key === 'ArrowRight' ||
+    e.key === 'Left' ||
+    e.key === 'ArrowLeft'
+  ) {
+    paddle.dx = 0;
+  }
 }
 
 // Key event handlers
