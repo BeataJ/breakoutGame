@@ -122,7 +122,27 @@ function moveBall() {
     ball.x + ball.size < paddle.x + paddle.w &&
     ball.y + ball.size > paddle.y
   ) {
+    ball.dy = -ball.speed;
   }
+
+  // Brick collision
+  bricks.forEach((column) => {
+    column.forEach((brick) => {
+      if (brick.visible) {
+        if (
+          ball.x - ball.size > brick.x && // left brick side check
+          ball.x + ball.size < brick.x + brick.w && // right brick side check
+          ball.y + ball.size > brick.y && // top brick side check
+          ball.y - ball.size < brick.y + brick.h // bottom brick side check
+        ) {
+          ball.dy *= -1;
+          brick.visible = false;
+
+          // increaseScore();
+        }
+      }
+    });
+  });
 }
 
 // Draw everything
