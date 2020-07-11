@@ -138,11 +138,19 @@ function moveBall() {
           ball.dy *= -1;
           brick.visible = false;
 
-          // increaseScore();
+          increaseScore();
         }
       }
     });
   });
+}
+
+function increaseScore() {
+  score++;
+
+  if (score % (brickRowCount * brickRowCount) === 0) {
+    showAllBricks();
+  }
 }
 
 // Draw everything
