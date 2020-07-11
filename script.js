@@ -14,7 +14,7 @@ const ball = {
   x: canvas.width / 2,
   y: canvas.height / 2,
   size: 10,
-  speed: 4,
+  speed: 1,
   dx: 4,
   dy: -4,
 };
@@ -145,12 +145,20 @@ function moveBall() {
   });
 }
 
+// Increase score
 function increaseScore() {
   score++;
 
   if (score % (brickRowCount * brickRowCount) === 0) {
     showAllBricks();
   }
+}
+
+// Make all bricks appear
+function showAllBricks() {
+  bricks.forEach((column) => {
+    column.forEach((brick) => (brick.visible = true));
+  });
 }
 
 // Draw everything
